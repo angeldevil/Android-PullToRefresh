@@ -755,6 +755,7 @@ public abstract class PullToRefreshBase<T extends View> extends LinearLayout imp
 				}
 			} else {
 				smoothScrollTo(0);
+				callRefreshListener();
 			}
 		} else {
 			// We're not scrolling, so just call Refresh Listener now
