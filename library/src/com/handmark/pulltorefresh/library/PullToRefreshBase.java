@@ -266,7 +266,7 @@ public abstract class PullToRefreshBase<T extends View> extends LinearLayout imp
 					}
 					absDiff = Math.abs(diff);
 
-					if (absDiff > mTouchSlop && (!mFilterTouchEvents || absDiff > Math.abs(oppositeDiff))) {
+					if (absDiff > mTouchSlop && (!mFilterTouchEvents || absDiff > Math.abs(oppositeDiff)) && !isRefreshing()) {
 						if (mMode.showHeaderLoadingLayout() && diff >= 1f && isReadyForPullStart()) {
 							mLastMotionY = y;
 							mLastMotionX = x;
